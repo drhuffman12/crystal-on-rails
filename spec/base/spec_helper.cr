@@ -3,6 +3,8 @@ require "../../src/all"
 class ViewController < Controller
   actions :index, :hello, :redirect
 
+  getter name : String = ""
+
   def index
     html "Hello world!<img src='/assets/amethyst.jpg'>"
   end
