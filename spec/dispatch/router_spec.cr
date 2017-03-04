@@ -37,24 +37,24 @@ describe Router do
     end
   end
 
-  describe "#exists?" do
-    it "return true if route path exists" do
-      router.exists?("/index", "GET").should eq true
+  describe "#get_named_route" do
+    it "return the route if route path exists" do
+      router.get_named_route("/index", "GET").should be_a Dispatch::Route
     end
 
     it "return false if route path doesn't exists" do
-      router.exists?("/indexs", "GET").should eq false
+      router.get_named_route("/indexs", "GET").should be_a Nil
     end
 
     it "raises HttpMethodNotAllowed if method not allowed" do
       expect_raises HttpMethodNotAllowed do
-        router.exists?("/index", "PUT")
+        router.get_named_route("/index", "PUT")
       end
     end
 
     it "raises HttpNotImplemented if method is not implemented" do
       expect_raises HttpNotImplemented do
-        router.exists?("/index", "GETSS")
+        router.get_named_route("/index", "GETSS")
       end
     end
   end

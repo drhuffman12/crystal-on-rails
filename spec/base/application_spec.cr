@@ -1,17 +1,17 @@
 require "./spec_helper"
 # require "minitest/autorun"
 
-describe Base::App do
+describe Amethyst::Base::App do
 
   describe "#initialize" do
-    app = Base::App.new
+    app = Amethyst::Base::App.new
 
     it "should set app name" do
       app.name.should eq "application_spec"
     end
 
     it "should set app directory" do
-      Base::App.settings.app_dir.should eq ENV["PWD"]
+      Amethyst::Base::App.settings.app_dir.should eq ENV["PWD"]
     end
 
     it "should set default middleware" do
@@ -34,24 +34,24 @@ describe Base::App do
 
   describe "shortcuts" do
     it "self.settings" do
-      Base::App.settings.should be Base::Config.instance
+      Amethyst::Base::App.settings.should be Amethyst::Base::Config.instance
     end
 
     it "self.routes" do
-      Base::App.routes.should be Dispatch::Router.instance
+      Amethyst::Base::App.routes.should be Dispatch::Router.instance
     end
 
     it "self.logger" do
-      Base::App.logger.should be Base::Logger.instance
+      Amethyst::Base::App.logger.should be Amethyst::Base::Logger.instance
     end
 
     it "self.middleware" do
-      Base::App.middleware.should be Middleware::MiddlewareStack.instance
+      Amethyst::Base::App.middleware.should be Middleware::MiddlewareStack.instance
     end
   end
 
   describe "self#use" do
-    Base::App.use TestMiddleware
+    Amethyst::Base::App.use TestMiddleware
     it " delegates to MiddlewareStack" do
       App.middleware.includes?(TestMiddleware).should be_true
     end

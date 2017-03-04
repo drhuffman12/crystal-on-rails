@@ -14,7 +14,13 @@ describe Response do
 
   describe "#build" do
     it "should return HTTP::Response" do
-      response.build.should be_a HTTP::Response
+      io = IO::Memory.new
+      http_resp = HTTP::Server::Response.new io
+      http_resp.status_code = 200
+      http_resp.headers["Content-Length"] = "5"
+      http_resp.output << "hello"
+
+      response.build(http_resp).should be_a HTTP::Server::Response
     end
   end
 
