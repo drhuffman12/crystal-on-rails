@@ -4,8 +4,11 @@ require "../src/all"
 #require "minitest/autorun"
 #require "webmock"
 
-class IndexController < Base::Controller
+class IndexController < Amethyst::Base::Controller
   actions :hello, :bye, :hello_you
+
+  getter name : String = ""
+
   def hello
     html "Hello"
   end
@@ -28,7 +31,7 @@ class TestMiddleware < Middleware::Base
   end
 end
 
-def create_controller_instance(controller : Base::Controller.class)
+def create_controller_instance(controller : Amethyst::Base::Controller.class)
   request, response = HttpHlp.get_env
   controller = controller.new
   controller.set_env(request, response)

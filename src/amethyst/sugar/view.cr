@@ -1,6 +1,8 @@
 module Amethyst
   module Sugar
     module View
+      include Amethyst
+
       macro context(*args)
         def initialize(
           {% for arg in args %}

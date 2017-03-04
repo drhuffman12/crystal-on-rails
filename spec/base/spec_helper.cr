@@ -24,10 +24,10 @@ end
 
 module My
   module Inner
-    class App < Base::App
+    class App < Amethyst::Base::App
     end
   end
 end
 
-class GlobalApp < Base::App
+class GlobalApp < Amethyst::Base::App
 end

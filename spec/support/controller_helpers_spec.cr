@@ -1,7 +1,9 @@
 require "./spec_helper"
 
-class HelpersTestController < Base::Controller
+class HelpersTestController < Amethyst::Base::Controller
     actions :html_test, :text_test, :json_test, :redirect_to_test
+
+    getter name : String = ""
 
     def html_test
       html "Not found", status: 404
