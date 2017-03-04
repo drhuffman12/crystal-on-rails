@@ -1,11 +1,12 @@
-[//]: # #![Amethyst-logo](http://s019.radikal.ru/i635/1506/28/bac4764b9e03.png)
-[//]: # [![Pledgie](https://pledgie.com/campaigns/29689.png?skin_name=chrome)](https://pledgie.com/campaigns/29689)
-[//]: # [![Build Status](https://travis-ci.org/Codcore/amethyst.svg)](https://travis-ci.org/Codcore/amethyst)  [![Join the chat at https://gitter.im/Codcore/Amethyst](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Codcore/Amethyst?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Crystal on Rails
+
+[![Build Status](https://travis-ci.org/thomasnal/crystal-on-rails.svg)](https://travis-ci.org/thomasnal/crystal-on-rails)
 
 **Changelog**
-* Updated to Crystal 0.21.0
+* Updated to Crystal 0.21.0. Tests are compiling successfully. Although they fail, the tool works.
+* Forked, inherited non-compiling project and tests.
 
-Amethyst is a web framework written in the [Crystal](https://github.com/manastech/crystal) language. The goals of Amethyst are to be extremely fast and to provide agility in application development, much like Rails. Why did I call it "Amethyst"? Because Github uses a light purple color for the Crystal language similar to the [amethyst gemstone](http://en.wikipedia.org/wiki/Amethyst).
+Forked from Amethyst, renamed to Crystal on Rails, is a web framework written in the [Crystal](https://github.com/manastech/crystal) language. The goals of Amethyst are to be extremely fast and to provide agility in application development, much like Rails. Why did I call it "Amethyst"? Because Github uses a light purple color for the Crystal language similar to the [amethyst gemstone](http://en.wikipedia.org/wiki/Amethyst).
 
 Latest version - [0.1.7](https://github.com/Codcore/Amethyst/releases/tag/v0.1.7)
 Note that Amethyst is at it early stages, so it lacks for whole bunch of things. But you can give a hand with contributing.
