@@ -24,6 +24,8 @@ module Amethyst
         response.status_code = @status
         response.headers.merge! @headers
         response.output << @body
+
+        response
       end
 
       def cookie(key, value, secure=false, http_only=false, path="", domain="", expires="")
