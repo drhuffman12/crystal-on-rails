@@ -11,10 +11,10 @@ module Amethyst
       def initialize(app_path= "", app_type={{@type.name.stringify}})
         # XXX: __FILE__ in init args doesn't expand properly
         # XXX: Fetch @name from shards application name section instead from class name
-        app_path = __FILE__
+        app_path = __FILE__.gsub(/.\w+\Z/, "") if app_path.empty?
 
         @port = 8080
-        @name = File.basename(app_path).gsub(/.\w+\Z/, "")
+        @name = app_path
         self.class.settings.app_dir   = ENV["PWD"]
         self.class.settings.namespace = get_app_namespace(app_type)
         set_default_middleware
