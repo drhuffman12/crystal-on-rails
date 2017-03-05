@@ -1,4 +1,4 @@
-require "../../src/all"
+require "../spec_helper"
 
 class ViewController < Controller
   actions :index, :hello, :redirect
