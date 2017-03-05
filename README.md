@@ -6,7 +6,7 @@ Crystal on Rails (CoR) is a web-application framework for [Crystal](https://gith
 
 ### Changelog
 
-* Updated to Crystal 0.21.0. Fixed to make the tests pass.
+* Updated to Crystal 0.21.0. Fixed to make the tests pass. Enjoy everybody!
 * Forked Amethyst. Renamed to Crystal on Rails.
   - Inherited a broken project failing to compile including failed compilation of tests.
 
