@@ -2,15 +2,17 @@
 
 [![Build Status](https://travis-ci.org/thomasnal/crystal-on-rails.svg)](https://travis-ci.org/thomasnal/crystal-on-rails)
 
-**Changelog**
+Crystal on Rails (CoR) is a web-application framework for [Crystal](https://github.com/manastech/crystal) language. Crystal on Rails aspires to move the forked project foward and implement more features that allow convenient way of building web applications the way Ruby on Rails does. Ultimately it will include all needed to create database-backed web applications in a fast and conveninet way while benefiting from fast performance of a compiled language.
+
+### Changelog
+
 * Updated to Crystal 0.21.0. Fixed to make the tests pass.
 * Forked Amethyst. Renamed to Crystal on Rails.
   - Inherited a broken project failing to compile including failed compilation of tests.
 
-Crystal on Rails (CoR) is a web-application framework for [Crystal](https://github.com/manastech/crystal) language. Crystal on Rails aspires to move the forked project foward and implement more features that allow convenient way of building web applications the way Ruby on Rails does. Ultimately it will include all needed to create database-backed web applications in a fast and conveninet way while benefiting from fast performance of a compiled language.
+**Latest version** - [0.1.7](https://github.com/Codcore/Amethyst/releases/tag/v0.1.7)
 
-Latest version - [0.1.7](https://github.com/Codcore/Amethyst/releases/tag/v0.1.7)
-Note that Amethyst is at it early stages, so it lacks for whole bunch of things. But you can give a hand with contributing.
+Note that Amethyst is in its early stage, so it lacks for whole bunch of things. You can give a hand with contributing.
 * [Roadmap](https://github.com/Codcore/Amethyst/wiki/Roadmap)
 
 [Amethyst examples](https://github.com/Codcore/amethyst-examples)
