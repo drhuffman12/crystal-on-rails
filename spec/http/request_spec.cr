@@ -12,7 +12,7 @@ describe Request do
       request.method.should             eq "GET"
       request.path.should               eq "/"
       request.headers["Accept"].should  eq "text/plain"
-      request.body.should               eq "Test"
+      request.body.to_s.should               eq "Test"
       request.version.should            eq "HTTP/1.1"
     end
   end
