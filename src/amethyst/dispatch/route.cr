@@ -9,6 +9,8 @@ module Amethyst
 
       def initialize(@pattern : String, @controller : String, @action : String)
         @pattern = @pattern.gsub(/\/$/, "\$") unless @pattern == "/"
+        # Perform exact regexp match by adding $
+        @path_re = Regex.new(@pattern.to_s.gsub(/(:\w*)/, ".*") + "$")
         @length  = @pattern.split("/").size
         @methods = [] of String
       end
@@ -19,18 +21,20 @@ module Amethyst
         @methods << method
       end
 
-      # Cheks whether path matches a route pattern and HTTP method
+      # Checks whether path matches a route pattern and HTTP method
       def matches?(path, method)
-        raise Exceptions::HttpNotImplemented.new(method) unless Http::METHODS.includes?(method)
-        path = path.gsub(/\/$/, "") unless path == "/"
-        return false unless path.split("/").size == @length
-        regex = Regex.new(@pattern.to_s.gsub(/(:\w*)/, ".*"))
-        matches = false
-        if path.match(regex)
-          raise Exceptions::HttpMethodNotAllowed.new(method, @methods) unless @methods.includes?(method)
-          matches = true
+        unless Http::METHODS.includes? method
+          raise Exceptions::HttpNotImplemented.new(method)
         end
-        matches
+
+        path = path.gsub(/\/$/, "") unless path == "/"
+
+        matches = path.match @path_re
+        if matches && !@methods.includes?(method)
+          raise Exceptions::HttpMethodNotAllowed.new(method, @methods)
+        end
+
+        matches ? true : false
       end
 
       # Returns hash of params of given path
