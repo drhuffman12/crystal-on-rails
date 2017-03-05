@@ -8,7 +8,11 @@ module Amethyst
       @app : Middleware::Base | Dispatch::Router
       @http_handler : Base::Handler
 
-      def initialize(app_path= __FILE__, app_type={{@type.name.stringify}})
+      def initialize(app_path= "", app_type={{@type.name.stringify}})
+        # XXX: __FILE__ in init args doesn't expand properly
+        # XXX: Fetch @name from shards application name section instead from class name
+        app_path = __FILE__
+
         @port = 8080
         @name = File.basename(app_path).gsub(/.\w+\Z/, "")
         self.class.settings.app_dir   = ENV["PWD"]
