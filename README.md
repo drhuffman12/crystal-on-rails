@@ -3,10 +3,11 @@
 [![Build Status](https://travis-ci.org/thomasnal/crystal-on-rails.svg)](https://travis-ci.org/thomasnal/crystal-on-rails)
 
 **Changelog**
-* Updated to Crystal 0.21.0. Tests are compiling successfully. Although they fail, the tool works.
-* Forked, inherited non-compiling project and tests.
+* Updated to Crystal 0.21.0. Fixed to make the tests pass.
+* Forked Amethyst. Renamed to Crystal on Rails.
+  - Inherited a broken project failing to compile including failed compilation of tests.
 
-Forked from Amethyst, renamed to Crystal on Rails, is a web framework written in the [Crystal](https://github.com/manastech/crystal) language. The goals of Amethyst are to be extremely fast and to provide agility in application development, much like Rails. Why did I call it "Amethyst"? Because Github uses a light purple color for the Crystal language similar to the [amethyst gemstone](http://en.wikipedia.org/wiki/Amethyst).
+Crystal on Rails (CoR) is a web-application framework for [Crystal](https://github.com/manastech/crystal) language. Crystal on Rails aspires to move the forked project foward and implement more features that allow convenient way of building web applications the way Ruby on Rails does. Ultimately it will include all needed to create database-backed web applications in a fast and conveninet way while benefiting from fast performance of a compiled language.
 
 Latest version - [0.1.7](https://github.com/Codcore/Amethyst/releases/tag/v0.1.7)
 Note that Amethyst is at it early stages, so it lacks for whole bunch of things. But you can give a hand with contributing.
@@ -108,8 +109,3 @@ I would be glad for any help with contributing.
 ## Contributors
 
 - [Andrew Yaroshuk](https://github.com/Codcore) Codcore - creator, maintainer
-
-[//] # ## Support
-[//] # Amethyst is not a commercial project,it is developed on pure enthusiasm, so if you want to support Amethyst developing, you can help with donating.
-
-[//] # [![Pledgie](https://pledgie.com/campaigns/29689.png?skin_name=chrome)](https://pledgie.com/campaigns/29689)

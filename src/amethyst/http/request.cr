@@ -7,7 +7,7 @@ module Amethyst
     class Request
       property method : String
       getter   headers : HTTP::Headers
-      property body : IO | String | Nil
+      property body : String
       getter   version : String
       setter   path : String
       getter   query_string : String | Nil
@@ -18,7 +18,7 @@ module Amethyst
         @method  = base_request.method
         @path    = base_request.path.to_s
         @headers = base_request.headers
-        @body    = base_request.body
+        @body    = base_request.body.to_s
         @version = base_request.version
         @query_string       = base_request.query
         @query_parameters   = Http::Params.new

@@ -1,6 +1,6 @@
 require "./spec_helper"
 
 describe Config do
-  pending "for reliable Config implementation" do
+  pending "needs reliable implementation" do
   end
 end

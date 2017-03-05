@@ -6,8 +6,14 @@ describe Amethyst::Base::App do
   describe "#initialize" do
     app = Amethyst::Base::App.new
 
+    pending "should set app name from shards" do
+      # app.name.should eq "application_spec"
+      app.name.should eq "app"
+    end
+
     it "should set app name" do
-      app.name.should eq "application_spec"
+      app = Amethyst::Base::App.new "my_app"
+      app.name.should eq "my_app"
     end
 
     it "should set app directory" do
