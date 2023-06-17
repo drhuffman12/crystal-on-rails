@@ -1,10 +1,10 @@
-version: 1.0
+version: 2.0
 shards:
   html_builder:
-    github: crystal-lang/html_builder
+    git: https://github.com/crystal-lang/html_builder.git
     version: 0.2.2
 
   mime:
-    github: thomasnal/crystal-mime
-    commit: 3a31a7319d69eb9cf254812cd0cec2cc40132923
+    git: https://github.com/thomasnal/crystal-mime.git
+    version: 0.1.0+git.commit.3a31a7319d69eb9cf254812cd0cec2cc40132923
 
