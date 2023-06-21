@@ -40,7 +40,7 @@ module Amethyst
       # Process regular routes (which are in @routes)
       def process_named_route(route : Dispatch::Route, request : Http::Request, response : Http::Response)
         controller = route.controller
-        @controllers_instances[controller] ||=  @controllers.fetch(controller).new
+        @controllers_instances[controller] ||=  @controllers.fetch(controller, "").new
         controller_instance = @controllers_instances[controller]
         controller_instance.set_env(request, response)
         response = controller_instance.call_action(route.action)
@@ -55,7 +55,7 @@ module Amethyst
           action : String = match["action"]
           controller = Base::App.settings.namespace+controller.capitalize+"Controller"
           if @controllers.has_key? controller
-            controller_instance = @controllers_instances[controller] ||=  @controllers.fetch(controller).new
+            controller_instance = @controllers_instances[controller] ||=  @controllers.fetch(controller, "").new
             controller_instance.set_env(request, response)
           end
           response = @controllers_instances[controller].call_action(action)
