@@ -1,0 +1,88 @@
+on:
+  push:
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+      - name: shares install
+        run: shares install
+      - name: Run tests
+        run: crystal spec
+
+# name: Crystal CI Ubuntu
+
+# on:
+#   push:
+#     branches:   
+#       - '*'
+#       #  [ master ]
+
+# jobs:
+#   build:
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         # os: [ubuntu-latest, windows-latest, mac-latest]
+#         os: [ubuntu-latest]
+#         # crystal: [1.7, latest, nightly]
+#         crystal: [latest, nightly]
+
+#     container:
+#       image: crystallang/crystal:nightly
+
+#     runs-on: ${{ matrix.os }}
+
+#     steps:
+#     - name: Download source
+#       uses: actions/checkout@v2
+#     - name: Install Crystal
+#       uses: crystal-lang/install-crystal@v1
+#       with:
+#         crystal: ${{ matrix.crystal }}
+
+#     # - uses: actions/checkout@v2
+#     #     with:
+#     #       crystal: ${{ matrix.crystal }}
+
+#     - name: Show Crystal version
+#       run: crystal -v
+
+#     - name: Install dependencies
+#       # run: shards install && shards update
+#       run: shards install --ignore-crystal-version && shards update --ignore-crystal-version
+
+#     - name: Show repo version
+#       run: scripts/version_info
+
+#     - name: Run static code analysis
+#       # run: bin/ameba --no-color
+#       run: crystal bin/ameba.cr # --no-color
+
+#       # run: crystal spec
+#     - name: Run tests
+#       run: scripts/test_always
+
+#       # run: crystal spec in junit format
+#     - name: Run tests (w/ junit format)
+#       run: scripts/test_always_junit_format
+#       if: always() # always run even if the previous step fails
+
+#       # publish: spec results in junit format
+#     - name: Publish Test Report
+#       if: always() # always run even if the previous step fails
+#       uses: mikepenz/action-junit-report@v3
+#       with:
+#         report_paths: '**/test-results/output.xml'
+
+#     # - name: Archive Test Results
+#     #   if: always()
+#     #   uses: actions/upload-artifact@v1
+#     #   with:
+#     #     name: test-results
+#     #     path: app/build
