@@ -14,7 +14,7 @@
 #
 # Get the session details:
 # session_pool.get_session(session_id)
-require "secure_random"
+# require "secure_random"
 
 module Amethyst
   module Session
@@ -31,7 +31,7 @@ module Amethyst
       def generate_sid
         sid, _sid = "", ""
         while sid.empty?
-          _sid = Base64.urlsafe_encode(SecureRandom.random_bytes(128))
+          _sid = Base64.urlsafe_encode(Random::Secure.random_bytes(128))
           sid = _sid unless @pool.has_key?(_sid)
         end
         @pool[sid] = {} of Symbol => String
